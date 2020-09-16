@@ -84,6 +84,7 @@
     <None Include="system.i" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\hos-v4a\kernel\include\kernel.h" />
     <ClInclude Include="HelloWorld.h" />
     <ClInclude Include="kernel_id.h" />
     <ClInclude Include="ostimer.h" />

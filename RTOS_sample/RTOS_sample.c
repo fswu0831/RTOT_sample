@@ -61,14 +61,14 @@ void create_object(void) {
 
 	for(i=0;i<POLID_MAX;i++){
 		//ercd=cre_flg(pol_info[i].polid,&pol_info[i].info);
-		ercd=cre_mpf(pol_info[i].polid,&pol_info[i].info);
+		ercd=acre_mpf(&pol_info[i].info);
 		if(ercd!=E_OK){
 
 		}
 	}
 
 	for(i=0;i<MBXID_MAX;i++){
-		ercd=cre_mbx(mbx_info[i].mbxid,&mbx_info[i].info);
+		ercd=acre_mbx(&mbx_info[i].info);
 		if(ercd!=E_OK){
 
 		}
