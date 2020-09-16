@@ -94,6 +94,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="kernel_cfg.c" />
+    <ClCompile Include="main.c" />
     <ClCompile Include="ostimer.c" />
     <ClCompile Include="RTOS_sample.c" />
     <ClCompile Include="stdafx.cpp" />

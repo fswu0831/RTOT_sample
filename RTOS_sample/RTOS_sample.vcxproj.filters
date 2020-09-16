@@ -59,6 +59,9 @@
     <ClCompile Include="kernel_cfg.c">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Library Include="hosv4a.lib" />
