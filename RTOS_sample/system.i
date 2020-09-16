@@ -1,0 +1,24 @@
+#line 1 "system.cfg"
+
+ 
+INCLUDE("\"ostimer.h\"");
+INCLUDE("\"HelloWorld.h\"");
+ 
+
+KERNEL_HEP_MEM(4096, NULL);
+KERNEL_INT_STK(1024, NULL);
+KERNEL_TIM_TIC(10, 1);
+KERNEL_MAX_TSKID(8);
+KERNEL_MAX_SEMID(8);
+KERNEL_MAX_MBXID(8);
+KERNEL_MAX_MPFID(8);
+KERNEL_MAX_CYCID(8);
+ 
+
+ATT_INI({TA_HLNG, 0, OsTimer_Initialize});
+ 
+
+CRE_TSK(TSK1_ID, {TA_HLNG|TA_ACT, 1, task_main, 1, 1024, NULL});
+CRE_TSK(TSK2_ID, {TA_HLNG|TA_ACT, 1, task_sub, 1, 1024, NULL});
+CRE_TSK(TSK3_ID, {TA_HLNG|TA_ACT, 1, task_sub, 1, 1024, NULL});
+CRE_TSK(TSK4_ID, {TA_HLNG|TA_ACT, 1, task_rcv, 1, 1024, NULL});
