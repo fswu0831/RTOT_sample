@@ -32,7 +32,7 @@ void WinTimer_Start(INHNO inhno, int iInterval)
 	hEventTimer = CreateEvent(NULL, FALSE, FALSE, NULL);
 	
 	/* %jp{マルチメディアタイマの開始} */
-	timeSetEvent(iInterval, 1, (LPTIMECALLBACK)hEventTimer, 0, TIME_PERIODIC | TIME_CALLBACK_EVENT_PULSE);
+	//timeSetEvent(iInterval, 1, (LPTIMECALLBACK)hEventTimer, 0, TIME_PERIODIC | TIME_CALLBACK_EVENT_PULSE);
 	
 	/* %jp{スレッド生成} */
 	CreateThread(NULL, 0, WinTimer_Thread, (LPVOID)inhno, 0, &dwThreadId);
