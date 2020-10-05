@@ -11,10 +11,6 @@
 
 #pragma comment(lib, "winmm.lib")   // winmm.lib‚ðŽg—p‚·‚é
 
-void create_object(void);
-void task_main(INT stacd);
-void task_sub(INT stacd);
-void task_rcv(INT stacd);
 
 
 struct{
@@ -58,7 +54,7 @@ void create_object(void) {
 	INT i;
 	for(i=0;i<TSKID_MAX;i++){
 		ercd=cre_tsk(tsk_info[i].tskid,&tsk_info[i].info);
-		
+		printf("%d\n",tsk_info[i].tskid);
 		if(ercd!=E_OK){
 		}
 	}
@@ -78,8 +74,8 @@ void create_object(void) {
 
 		}
 	}
-
-	ercd=sta_tsk(TSK1_ID,0);
+	printf("%d",TSK2_ID);
+	ercd=act_tsk(TSK1_ID);
 	if(ercd!=E_OK){
 	}
 
@@ -92,8 +88,8 @@ void task_main(INT stacd)
 	INT i;
 	VP mba;
 	B *pt;
-	//printf("1");
-	ercd=sta_tsk(TSK2_ID,0);
+	printf("1");
+	ercd=act_tsk(TSK2_ID);
 	if(ercd=E_OK){
 		
 	}
@@ -152,7 +148,7 @@ B *pt;
 VP snd_blk;
 B *pt2;
 B c;
-	//c=putchar(stacd);
+	printf("2");
 	c=set_char[stacd];
 
 	for(;;){
@@ -200,3 +196,10 @@ void task_rcv(INT stacd)
 }
 
 
+int main(){
+	INT a=1;
+	create_object();
+	task_main(a);
+	task_sub(a);
+	task_rcv(a);
+}
