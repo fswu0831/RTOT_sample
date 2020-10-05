@@ -34,9 +34,9 @@ struct {
 	ID polid;
 	T_CMPF info;
 } pol_info[]={
-	{POL1_ID, {0,TA_TFIFO,4,NULL}}, //80
-	{POL2_ID, {0,TA_TFIFO,4,NULL}},//128
-	{POL3_ID, {0,TA_TFIFO,4,NULL}}//256
+	{POL1_ID, {0,TA_TFIFO,4,80}}, //80
+	{POL2_ID, {0,TA_TFIFO,4,128}},//128
+	{POL3_ID, {0,TA_TFIFO,4,256}}//256
 };
 
 #define POLID_MAX 3
@@ -45,9 +45,9 @@ struct{
 	ID mbxid;
 	T_CMBX info;
 } mbx_info[]={
-	{MBX1_ID,  {0,TA_TFIFO, NULL}},//4
-	{MBX2_ID,  {0,TA_TFIFO, NULL}},
-	{MBX3_ID,  {0,TA_TFIFO, NULL}}
+	{MBX1_ID,  {0,TA_TFIFO, 4}},//4
+	{MBX2_ID,  {0,TA_TFIFO, 4}},
+	{MBX3_ID,  {0,TA_TFIFO, 4}}
 };
 
 #define MBXID_MAX 3
@@ -60,11 +60,12 @@ void create_object(void) {
 		ercd=cre_tsk(tsk_info[i].tskid,&tsk_info[i].info);
 		
 		if(ercd!=E_OK){
+			printf("creat task");
 		}
 	}
 
 	for(i=0;i<POLID_MAX;i++){
-		//ercd=cre_mpf(pol_info[i].polid,&pol_info[i].info);
+		//ercd=cre_mpf(pol_info[i].polid,&pol_info[i].info); 
 		ercd=acre_mpf(&pol_info[i].info);
 		if(ercd!=E_OK){
 
